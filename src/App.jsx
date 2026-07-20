@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Founder from './components/Founder'
+import Personalities from './components/Personalities'
 import Services from './components/Services'
 import Cuisines from './components/Cuisines'
 import Stats from './components/Stats'
@@ -29,7 +30,7 @@ export default function App() {
       <Navbar onBookNow={openModal} />
       <Hero onBookNow={openModal} />
       <About onBookNow={openModal} />
-      <Founder />
+      <Founder /><Personalities />
       <Services />
       <Cuisines />
       <Stats />
