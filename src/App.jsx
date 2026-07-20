@@ -15,6 +15,7 @@ import Cta from './components/Cta'
 import ContactBar from './components/ContactBar'
 import Footer from './components/Footer'
 import QuoteModal from './components/QuoteModal'
+import Charity from './components/Charity'
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -36,7 +37,7 @@ export default function App() {
       <WhyUs />
       <Faq onBookNow={openModal} />
       <Gallery />
-      <Cta onBookNow={openModal} />
+      <Cta onBookNow={openModal} /><Charity />
       <ContactBar />
       <Footer />
       <QuoteModal isOpen={modalOpen} onClose={closeModal} />
