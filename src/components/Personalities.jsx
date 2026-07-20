@@ -1,3 +1,4 @@
+import { FaLandmark, FaFlag, FaFilm, FaMusic } from 'react-icons/fa'
 import p1 from '../assets/p1.jpg'
 import p2 from '../assets/p2.jpg'
 import p3 from '../assets/p3.jpg'
@@ -8,25 +9,25 @@ const personalities = [
     img: p1,
     name: 'CM Yogi Adityanath',
     title: 'Chief Minister, Uttar Pradesh',
-    tag: '🏛️ Political Leader',
+    tag: <><FaLandmark /> Political Leader</>,
   },
   {
     img: p2,
     name: 'PM Narendra Modi',
     title: 'Prime Minister of India',
-    tag: '🇮🇳 Prime Minister',
+    tag: <><FaFlag /> Prime Minister</>,
   },
   {
     img: p3,
     name: 'Vindu Dara Singh',
     title: 'Actor & Celebrity',
-    tag: '🎬 Bollywood',
+    tag: <><FaFilm /> Bollywood</>,
   },
   {
     img: p4,
     name: 'Udit Narayan',
     title: 'Legendary Playback Singer',
-    tag: '🎵 Music Icon',
+    tag: <><FaMusic /> Music Icon</>,
   },
 ]
 
@@ -34,6 +35,7 @@ export default function Personalities() {
   return (
     <section id="personalities">
       <div className="ct">
+
         {/* Header */}
         <div className="pers-header">
           <span className="ey">Our Honour</span>
@@ -49,7 +51,6 @@ export default function Personalities() {
         <div className="pers-grid">
           {personalities.map((p, i) => (
             <div className="pers-card" key={i}>
-              {/* Image */}
               <div className="pers-img-wrap">
                 <img src={p.img} alt={p.name} className="pers-img" />
                 <div className="pers-overlay">
@@ -60,8 +61,6 @@ export default function Personalities() {
                   </div>
                 </div>
               </div>
-
-              {/* Bottom Info */}
               <div className="pers-body">
                 <div className="pers-name">{p.name}</div>
                 <div className="pers-title">{p.title}</div>
@@ -72,10 +71,10 @@ export default function Personalities() {
 
         {/* Bottom Quote */}
         <div className="pers-bottom-quote">
-          <span className="pers-quote-icon">🙏</span>
           <p>We are honoured to have served India's finest — a testament to our
           commitment to quality, purity, and hospitality.</p>
         </div>
+
       </div>
     </section>
   )

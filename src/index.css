@@ -1009,3 +1009,7 @@ footer{background:#0F1F13;padding:64px 0 0}
 @media (max-width: 560px) {
   .pers-grid { grid-template-columns: 1fr; }
 }
+/* React Icons fix */
+.wicon svg { font-size: 2rem; color: var(--green); }
+.cb-icon svg { font-size: 1.6rem; }
+.cicon svg { color: var(--green-lt); }

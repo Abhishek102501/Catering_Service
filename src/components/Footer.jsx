@@ -1,3 +1,5 @@
+import { FaPhone, FaMapMarkerAlt, FaBuilding, FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+
 export default function Footer() {
   return (
     <footer>
@@ -11,9 +13,9 @@ export default function Footer() {
               catering across Kanpur since 1982, serving with devotion guided by Mata Annapurna.
             </p>
             <div className="fsoc">
-              <a className="fsl" href="#">f</a>
-              <a className="fsl" href="#">in</a>
-              <a className="fsl" href="#">yt</a>
+              <a className="fsl" href="#"><FaFacebookF /></a>
+              <a className="fsl" href="#"><FaLinkedinIn /></a>
+              <a className="fsl" href="#"><FaYoutube /></a>
             </div>
           </div>
 
@@ -42,7 +44,7 @@ export default function Footer() {
           <div className="fcol">
             <h4>Contact Us</h4>
             <div className="cline">
-              <span className="cicon">📞</span>
+<span className="cicon"><FaPhone /></span>
               <span>
                 <a href="tel:+919936485155" style={{ color: 'rgba(255,255,255,.5)', textDecoration: 'none' }}>
                   +91-9936485155
@@ -53,11 +55,11 @@ export default function Footer() {
               </span>
             </div>
             <div className="cline">
-              <span className="cicon">📍</span>
+              <span className="cicon"><FaMapMarkerAlt /></span>
               <span>77/6 Gandhi Gram, Kanpur – 208007, U.P.</span>
             </div>
             <div className="cline">
-              <span className="cicon">🏢</span>
+              <span className="cicon"><FaBuilding /></span>
               <span>7/1, 7/2 LT Enclave, Krishna Nagar, Kanpur</span>
             </div>
           </div>
