@@ -1,8 +1,8 @@
 const stats = [
   { num: '42', unit: '+', label: 'Years of Service' },
   { num: '300', unit: '+', label: 'Veg Menu Varieties' },
-  { num: '5K', unit: '+', label: 'Events Catered' },
   { num: '100', unit: '%', label: 'Pure Vegetarian' },
+  { num: '10K', unit: '+', label: 'Events Catered' },
 ]
 
 export default function Stats() {

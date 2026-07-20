@@ -43,9 +43,7 @@ export default function Navbar({ onBookNow }) {
           </ul>
 
           <div className="nav-cta">
-            <div className="veg-badge">
-              <div className="veg-dot"></div>100% Veg
-            </div>
+           
             <button className="btn btn-g" onClick={onBookNow}>Book Now</button>
           </div>
 

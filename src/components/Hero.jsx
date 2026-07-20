@@ -3,10 +3,6 @@ export default function Hero({ onBookNow }) {
     <section id="hero">
       <div className="hero-bg"></div>
       <div className="hero-content">
-        <div className="hero-badge">
-          <span className="hero-veg">🌿 100% Veg</span>
-          <span>Serving Kanpur Since 1982</span>
-        </div>
         <h1 className="hero-title">
           Pure Vegetarian.<br />
           <em>Unforgettable</em> Flavours.
@@ -49,7 +45,6 @@ export default function Hero({ onBookNow }) {
           <div className="strip-item">🏢 Corporate Events</div>
           <div className="strip-item">🎉 Social Gatherings</div>
           <div className="strip-item">👑 VIP Parties</div>
-          <div className="strip-item">🌿 Only Veg</div>
         </div>
       </div>
     </section>
