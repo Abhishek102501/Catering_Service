@@ -813,3 +813,20 @@ footer{background:#0F1F13;padding:64px 0 0}
   .founder-circle-img { width: 160px; height: 160px; }
   .charity-highlight-num { font-size: 1.8rem; }
 }
+/* ── FOUNDER EXTRA ── */
+.founder-reverse { direction: rtl; }
+.founder-reverse .founder-left,
+.founder-reverse .founder-right { direction: ltr; }
+.founder-divider-row {
+  padding-bottom: clamp(48px, 6vw, 96px);
+  margin-bottom: clamp(48px, 6vw, 96px);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.founder-nickname {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--yellow);
+  margin-bottom: 6px;
+  margin-top: -4px;
+}
