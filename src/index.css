@@ -699,3 +699,117 @@ footer{background:#0F1F13;padding:64px 0 0}
   .charity-cards { grid-template-columns: 1fr; }
   .charity-form-row { grid-template-columns: 1fr; }
 }
+/* ═══════════════════════════════════════════
+   COMPREHENSIVE RESPONSIVE FIXES
+   Breakpoints: 1024px | 768px | 480px | 375px
+═══════════════════════════════════════════ */
+
+/* ── TABLET (max 1024px) ── */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-cta .veg-badge { display: none; }
+  .hero-stats { display: none; }
+  .hero-strip-inner { gap: 20px; }
+  .strip-item { font-size: .7rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-img-wrap { display: none; }
+  .sgrid { grid-template-columns: 1fr 1fr; }
+  .cuisines-grid { grid-template-columns: repeat(3, 1fr); }
+  .srow { grid-template-columns: repeat(2, 1fr); }
+  .si { border-right: none; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .si:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.2); }
+  .tgrid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-layout { grid-template-columns: 1fr; }
+  .fl { margin-bottom: 32px; }
+  .ggrid { grid-template-columns: repeat(3, 1fr); }
+  .gi.wide { grid-column: span 1; }
+  .gi.tall { grid-row: span 1; }
+  .founder-grid { grid-template-columns: 1fr; gap: 48px; }
+  .founder-left { align-items: center; }
+  .founder-right { padding-left: 0; }
+  .charity-cards { grid-template-columns: repeat(2, 1fr); }
+  .charity-main { grid-template-columns: 1fr; }
+  .charity-story { padding-right: 0; margin-bottom: 32px; }
+  .fg { grid-template-columns: 1fr 1fr; }
+  .cb-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ── MOBILE (max 768px) ── */
+@media (max-width: 768px) {
+  :root { --pad: clamp(40px, 6vw, 72px); }
+  .topbar span { font-size: .68rem; }
+  .nav-inner { height: 60px; }
+  .nav-logo img { height: 42px; }
+  .nav-logo-text .main { font-size: 1rem; }
+  .nav-logo-text .sub { display: none; }
+  .nav-cta { gap: 8px; }
+  .nav-cta .btn { padding: 9px 18px; font-size: .75rem; }
+  .hero-content { padding-top: 60px; padding-bottom: 100px; }
+  .hero-title { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .hero-sub-hindi { font-size: .95rem; }
+  .hero-sub { font-size: .9rem; }
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .hero-strip-inner { gap: 12px; padding: 0 12px; }
+  .strip-item { font-size: .65rem; gap: 5px; }
+  .about-text { padding-right: 0; }
+  .feats { grid-template-columns: 1fr; gap: 8px; }
+  .tagline-box { font-size: .85rem; }
+  .sgrid { grid-template-columns: 1fr; }
+  .sc { height: 300px; }
+  .cuisines-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .srow { grid-template-columns: repeat(2, 1fr); }
+  .sn { font-size: 2.4rem; }
+  .tgrid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .wc { padding: 24px 16px; }
+  .faq-layout { grid-template-columns: 1fr; }
+  .fq { font-size: .88rem; }
+  .ggrid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; gap: 4px; }
+  .founder-circle-wrap { width: 220px; height: 220px; }
+  .founder-circle-img { width: 220px; height: 220px; }
+  .founder-name { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+  .founder-stat-sep { display: none; }
+  .founder-philosophy { flex-direction: column; gap: 10px; }
+  .charity-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .charity-title { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  .charity-form-wrap { padding: 24px 20px; }
+  .charity-form-row { grid-template-columns: 1fr; }
+  #cta { padding: 60px 0; }
+  .cta-actions { flex-direction: column; align-items: center; gap: 10px; }
+  .cta-actions .btn, .cta-actions .wa-btn { width: 100%; justify-content: center; text-align: center; }
+  .fg { grid-template-columns: 1fr; gap: 32px; }
+  .qbox { padding: 28px 20px; margin: 0 12px; }
+  .f2col { grid-template-columns: 1fr; }
+}
+
+/* ── SMALL MOBILE (max 480px) ── */
+@media (max-width: 480px) {
+  .topbar span { font-size: .62rem; line-height: 1.6; }
+  .nav-logo-text .main { font-size: .9rem; }
+  .hero-title { font-size: clamp(1.8rem, 7.5vw, 2.8rem); }
+  .hero-strip { display: none; }
+  .cuisines-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .srow { grid-template-columns: 1fr 1fr; }
+  .charity-cards { grid-template-columns: 1fr; }
+  .founder-circle-wrap { width: 180px; height: 180px; }
+  .founder-circle-img { width: 180px; height: 180px; }
+  .ggrid { grid-template-columns: 1fr 1fr; grid-auto-rows: 130px; }
+  h2.st { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+}
+
+/* ── EXTRA SMALL (max 375px) ── */
+@media (max-width: 375px) {
+  .hero-title { font-size: 1.7rem; }
+  .hero-sub-hindi { font-size: .85rem; }
+  .hero-sub { font-size: .82rem; }
+  .nav-logo img { height: 36px; }
+  .nav-logo-text .main { font-size: .82rem; }
+  .sn { font-size: 2rem; }
+  .founder-circle-wrap { width: 160px; height: 160px; }
+  .founder-circle-img { width: 160px; height: 160px; }
+  .charity-highlight-num { font-size: 1.8rem; }
+}
