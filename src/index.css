@@ -660,7 +660,8 @@ footer{background:#0F1F13;padding:64px 0 0}
 .charity-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 64px; }
 .charity-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); padding: 28px 22px; text-align: center; border-bottom: 3px solid var(--green); transition: background .3s, transform .3s; }
 .charity-card:hover { background: rgba(255,255,255,.08); transform: translateY(-4px); }
-.charity-card-icon { font-size: 2rem; margin-bottom: 12px; }
+.charity-card-icon { font-size: 2rem; margin-bottom: 12px; display: flex; justify-content: center; }
+.charity-card-icon svg { font-size: 2rem; color: var(--white); }
 .charity-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
 .charity-card p { font-size: .86rem; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.6; }
 
@@ -1013,3 +1014,6 @@ footer{background:#0F1F13;padding:64px 0 0}
 .wicon svg { font-size: 2rem; color: var(--green); }
 .cb-icon svg { font-size: 1.6rem; }
 .cicon svg { color: var(--green-lt); }
+/* Cuisine badge icon fix */
+.cuisine-badge { display: inline-flex; align-items: center; gap: 5px; }
+.cuisine-badge-icon svg { font-size: .7rem; vertical-align: middle; }

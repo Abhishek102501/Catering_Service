@@ -1,22 +1,24 @@
 import { useState } from 'react'
+import PageLoader from './components/PageLoader'
 import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Founder from './components/Founder'
-import Personalities from './components/Personalities'
 import Services from './components/Services'
-import Cuisines from './components/Cuisines'
 import Stats from './components/Stats'
+import Cuisines from './components/Cuisines'
+import Personalities from './components/Personalities'
 import Testimonials from './components/Testimonials'
-import WhyUs from './components/WhyUs'
+import Charity from './components/Charity'
 import Faq from './components/Faq'
 import Gallery from './components/Gallery'
 import Cta from './components/Cta'
 import ContactBar from './components/ContactBar'
 import Footer from './components/Footer'
 import QuoteModal from './components/QuoteModal'
-import Charity from './components/Charity'
+// import WhyUs from './components/WhyUs'
+
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -26,22 +28,25 @@ export default function App() {
 
   return (
     <>
+      <PageLoader />
       <TopBar />
       <Navbar onBookNow={openModal} />
       <Hero onBookNow={openModal} />
       <About onBookNow={openModal} />
-      <Founder /><Personalities />
-      <Services />
+      <Founder />
+      <Services /><Stats/>
       <Cuisines />
-      <Stats />
+      <Personalities />
       <Testimonials />
-      <WhyUs />
+      <Charity />
       <Faq onBookNow={openModal} />
       <Gallery />
-      <Cta onBookNow={openModal} /><Charity />
+      <Cta onBookNow={openModal} />
       <ContactBar />
       <Footer />
       <QuoteModal isOpen={modalOpen} onClose={closeModal} />
     </>
   )
 }
+
+

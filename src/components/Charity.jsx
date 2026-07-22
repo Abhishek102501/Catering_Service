@@ -1,5 +1,6 @@
 import { FaMosque, FaCalendarAlt, FaBoxOpen, FaHandsHelping, FaLeaf, FaWhatsapp, FaHeart } from 'react-icons/fa'
 import { useState } from 'react'
+import { submitCharity } from '../api/api'
 
 const cards = [
   { icon: <FaMosque />, title: 'Where', desc: 'Outside Shri Annapurna Temple, Kanpur, U.P.' },
@@ -11,15 +12,26 @@ const cards = [
 export default function Charity() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', type: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const submit = () => {
+  const submit = async () => {
     if (!form.name || !form.phone) {
-      alert('Please enter your name and phone number.')
+      setError('Please enter your name and phone number.')
       return
     }
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+    try {
+      await submitCharity(form)
+      setSubmitted(true)
+    } catch (err) {
+      setError(err.response?.data?.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -95,12 +107,19 @@ export default function Charity() {
 
               {submitted ? (
                 <div className="charity-success">
-                  <div className="charity-success-icon"><FaHeart style={{ color: 'var(--green)', fontSize: '2.5rem' }} /></div>
+                  <div className="charity-success-icon">
+                    <FaHeart style={{ color: 'var(--green)', fontSize: '2.5rem' }} />
+                  </div>
                   <h4>Thank You!</h4>
                   <p>We will contact you soon. Your kindness matters.</p>
                 </div>
               ) : (
                 <div className="charity-form">
+                  {error && (
+                    <div style={{ background: '#FFF3F3', border: '1px solid #FFCDD2', padding: '10px 14px', color: '#C62828', fontSize: '.85rem', marginBottom: '14px' }}>
+                      {error}
+                    </div>
+                  )}
                   <div className="charity-form-row">
                     <div className="fr">
                       <label>Your Name</label>
@@ -130,8 +149,14 @@ export default function Charity() {
                     <label>Message (optional)</label>
                     <textarea name="message" placeholder="Any message for us…" value={form.message} onChange={handle}></textarea>
                   </div>
-                  <button className="charity-submit" onClick={submit}>
-                    <FaLeaf style={{ marginRight: '8px' }} /> Join the Mission
+                  <button
+                    className="charity-submit"
+                    onClick={submit}
+                    disabled={loading}
+                    style={{ opacity: loading ? 0.7 : 1 }}
+                  >
+                    <FaLeaf style={{ marginRight: '8px' }} />
+                    {loading ? 'Submitting...' : 'Join the Mission'}
                   </button>
                   <a
                     href="https://wa.me/919936485155?text=Hello! I want to volunteer/donate for your food charity."

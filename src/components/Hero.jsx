@@ -1,52 +1,102 @@
+import { motion } from 'framer-motion'
+import { FaWhatsapp, FaRing, FaBuilding, FaUsers, FaStar } from 'react-icons/fa'
+
 export default function Hero({ onBookNow }) {
   return (
     <section id="hero">
       <div className="hero-bg"></div>
+
       <div className="hero-content">
-        <h1 className="hero-title">
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           Pure Vegetarian.<br />
           <em>Unforgettable</em> Flavours.
-        </h1>
-        <div className="hero-sub-hindi">
+        </motion.h1>
+
+        <motion.div
+          className="hero-sub-hindi"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+        >
           लाला त्रिवेदी कैटरिंग सर्विस — आपके हर उत्सव का साथी
-        </div>
-        <p className="hero-sub">
+        </motion.div>
+
+        <motion.p
+          className="hero-sub"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
           Crafting exceptional vegetarian culinary experiences for weddings,
           corporate events, and celebrations across Kanpur.
-        </p>
-        <div className="hero-actions">
-          <button className="btn btn-y" onClick={onBookNow}>Get a Free Quote</button>
+        </motion.p>
+
+        <motion.div
+          className="hero-actions"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+        >
+          <button className="btn btn-y" onClick={onBookNow}>
+            Get a Free Quote
+          </button>
           <a
             href="https://wa.me/919936485155"
             target="_blank"
             rel="noreferrer"
             className="btn"
-            style={{ background: 'transparent', color: '#fff', border: '2px solid rgba(255,255,255,.6)' }}
-          >
-            💬 WhatsApp Us
+            style={{
+              background: 'transparent',
+              color: '#fff',
+              border: '2px solid rgba(255,255,255,.6)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+            >
+            <FaWhatsapp /> WhatsApp Us
           </a>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="hero-stats">
+      <motion.div
+        className="hero-stats"
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 1.1 }}
+      >
         <div className="hstat">
-          <div className="hstat-num">42<span style={{ fontSize: '1.5rem' }}>+</span></div>
+          <div className="hstat-num">
+            42<span style={{ fontSize: '1.5rem' }}>+</span>
+          </div>
           <div className="hstat-lbl">Years of Excellence</div>
         </div>
         <div className="hstat">
-          <div className="hstat-num">100<span style={{ fontSize: '1.5rem' }}>%</span></div>
+          <div className="hstat-num">
+            100<span style={{ fontSize: '1.5rem' }}>%</span>
+          </div>
           <div className="hstat-lbl">Pure Vegetarian</div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="hero-strip">
+      <motion.div
+        className="hero-strip"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+      >
         <div className="hero-strip-inner ct">
-          <div className="strip-item">🍽️ Weddings</div>
-          <div className="strip-item">🏢 Corporate Events</div>
-          <div className="strip-item">🎉 Social Gatherings</div>
-          <div className="strip-item">👑 VIP Parties</div>
+          <div className="strip-item"><FaRing /> Weddings</div>
+          <div className="strip-item"><FaBuilding /> Corporate Events</div>
+          <div className="strip-item"><FaUsers /> Social Gatherings</div>
+          <div className="strip-item"><FaStar /> VIP Parties</div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

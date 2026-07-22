@@ -21,6 +21,27 @@ export default function Navbar({ onBookNow }) {
 
   const closeMob = () => setMobOpen(false)
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault()
+    closeMob()
+    const el = document.getElementById(id)
+    if (el) {
+      const offset = 70
+      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
+
+  const links = [
+    { label: 'Our Story', id: 'about' },
+    { label: 'Founder', id: 'founder' },
+    { label: 'Services', id: 'services' },
+    { label: 'Cuisines', id: 'cuisines' },
+    { label: 'Reviews', id: 'testi' },
+    { label: 'FAQs', id: 'faq' },
+    { label: 'Gallery', id: 'gallery' },
+  ]
+
   return (
     <>
       <nav style={{ boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,.1)' : 'none' }}>
@@ -34,16 +55,16 @@ export default function Navbar({ onBookNow }) {
           </a>
 
           <ul className="nav-links">
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#testi">Reviews</a></li>
-            <li><a href="#faq">FAQs</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            {links.map((l) => (
+              <li key={l.id}>
+                <a href={`#${l.id}`} onClick={(e) => handleNavClick(e, l.id)}>
+                  {l.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
           <div className="nav-cta">
-           
             <button className="btn btn-g" onClick={onBookNow}>Book Now</button>
           </div>
 
@@ -56,13 +77,14 @@ export default function Navbar({ onBookNow }) {
       {/* Mobile Menu */}
       <div className={`mob-menu ${mobOpen ? 'open' : ''}`}>
         <button className="close-btn" onClick={closeMob}>×</button>
-        <a href="#about" onClick={closeMob}>Our Story</a>
-        <a href="#services" onClick={closeMob}>Services</a>
-        <a href="#menu" onClick={closeMob}>Menu</a>
-        <a href="#testi" onClick={closeMob}>Reviews</a>
-        <a href="#faq" onClick={closeMob}>FAQs</a>
-        <a href="#gallery" onClick={closeMob}>Gallery</a>
-        <button className="btn btn-g" onClick={() => { closeMob(); onBookNow(); }}>Book Now</button>
+        {links.map((l) => (
+          <a key={l.id} href={`#${l.id}`} onClick={(e) => handleNavClick(e, l.id)}>
+            {l.label}
+          </a>
+        ))}
+        <button className="btn btn-g" onClick={() => { closeMob(); onBookNow() }}>
+          Book Now
+        </button>
       </div>
     </>
   )

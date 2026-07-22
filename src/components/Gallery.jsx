@@ -1,3 +1,5 @@
+import { FadeUp, Stagger, StaggerItem } from './AnimatedSection'
+
 const images = [
   { src: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80', cls: 'tall' },
   { src: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80', cls: '' },
@@ -12,20 +14,24 @@ export default function Gallery() {
   return (
     <section id="gallery">
       <div className="ct">
-        <div className="gh">
-          <span className="ey">Photo Gallery</span>
-          <span className="gline"></span>
-          <h2 className="st">A Glimpse of Our Spreads</h2>
-        </div>
+        <FadeUp>
+          <div className="gh">
+            <span className="ey">Photo Gallery</span>
+            <span className="gline"></span>
+            <h2 className="st">A Glimpse of Our Spreads</h2>
+          </div>
+        </FadeUp>
 
-        <div className="ggrid">
+        <Stagger className="ggrid">
           {images.map((img, i) => (
-            <div className={`gi ${img.cls}`} key={i}>
-              <img src={img.src} alt={`Gallery ${i + 1}`} />
-              <div className="gi-overlay"></div>
-            </div>
+            <StaggerItem key={i}>
+              <div className={`gi ${img.cls}`}>
+                <img src={img.src} alt={`Gallery ${i + 1}`} />
+                <div className="gi-overlay"></div>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   )
