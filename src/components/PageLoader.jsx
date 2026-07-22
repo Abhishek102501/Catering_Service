@@ -24,7 +24,11 @@ export default function PageLoader() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <img src={`data:image/png;base64,${logoBase64}`} alt="LTCS" className="loader-logo" />
+            <img
+              src={`data:image/png;base64,${logoBase64}`}
+              alt="LTCS"
+              className="loader-logo"
+            />
             <motion.div
               className="loader-bar-wrap"
               initial={{ opacity: 0 }}
