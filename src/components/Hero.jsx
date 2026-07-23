@@ -1,11 +1,31 @@
 import { motion } from 'framer-motion'
 import { FaWhatsapp, FaRing, FaBuilding, FaUsers, FaStar } from 'react-icons/fa'
 
+const heroSlides = [
+  'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=1600&q=80',
+  'https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80',
+  'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1600&q=80',
+  'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600&q=80',
+  'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80',
+]
+
 export default function Hero({ onBookNow }) {
   return (
     <section id="hero">
-      <div className="hero-bg"></div>
 
+      {/* Slideshow Background */}
+      <div className="hero-slideshow">
+        {heroSlides.map((slide, i) => (
+          <div
+            key={i}
+            className={`hero-slide hero-slide-${i}`}
+            style={{ backgroundImage: `url(${slide})` }}
+          />
+        ))}
+        <div className="hero-overlay" />
+      </div>
+
+      {/* Content */}
       <div className="hero-content">
         <motion.h1
           className="hero-title"
@@ -49,21 +69,14 @@ export default function Hero({ onBookNow }) {
             href="https://wa.me/919936485155"
             target="_blank"
             rel="noreferrer"
-            className="btn"
-            style={{
-              background: 'transparent',
-              color: '#fff',
-              border: '2px solid rgba(255,255,255,.6)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px'
-            }}
-            >
+            className="btn btn-wa"
+          >
             <FaWhatsapp /> WhatsApp Us
           </a>
         </motion.div>
       </div>
 
+      {/* Stats */}
       <motion.div
         className="hero-stats"
         initial={{ opacity: 0, x: 40 }}
@@ -71,19 +84,16 @@ export default function Hero({ onBookNow }) {
         transition={{ duration: 0.7, delay: 1.1 }}
       >
         <div className="hstat">
-          <div className="hstat-num">
-            42<span style={{ fontSize: '1.5rem' }}>+</span>
-          </div>
+          <div className="hstat-num">42<span style={{ fontSize: '1.5rem' }}>+</span></div>
           <div className="hstat-lbl">Years of Excellence</div>
         </div>
         <div className="hstat">
-          <div className="hstat-num">
-            100<span style={{ fontSize: '1.5rem' }}>%</span>
-          </div>
+          <div className="hstat-num">100<span style={{ fontSize: '1.5rem' }}>%</span></div>
           <div className="hstat-lbl">Pure Vegetarian</div>
         </div>
       </motion.div>
 
+      {/* Strip */}
       <motion.div
         className="hero-strip"
         initial={{ opacity: 0, y: 20 }}

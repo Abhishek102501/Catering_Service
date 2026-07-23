@@ -34,14 +34,15 @@ export default function App() {
       <Hero onBookNow={openModal} />
       <About onBookNow={openModal} />
       <Founder />
-      <Services /><Stats/>
+      <Services />
+      <Stats />
       <Cuisines />
       <Personalities />
       <Testimonials />
       <Charity />
-      <Faq onBookNow={openModal} />
       <Gallery />
       <Cta onBookNow={openModal} />
+       <Faq onBookNow={openModal} />
       <ContactBar />
       <Footer />
       <QuoteModal isOpen={modalOpen} onClose={closeModal} />
