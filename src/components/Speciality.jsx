@@ -1,5 +1,5 @@
 import { FaLeaf, FaSeedling, FaRecycle, FaFlask, FaBan } from 'react-icons/fa'
-import { FadeUp } from './AnimatedSection'
+import { motion } from 'framer-motion'
 
 const specialities = [
   {
@@ -32,25 +32,46 @@ const specialities = [
 export default function Speciality() {
   return (
     <section id="speciality">
-      <FadeUp>
-        <div className="speciality-header">
-          <span className="speciality-label">Our Speciality</span>
-        </div>
-        <div className="speciality-strip">
-          {specialities.map((s, i) => (
-            <div className="speciality-item" key={i}>
-              <div className="speciality-icon">{s.icon}</div>
+      <motion.div
+        className="speciality-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="speciality-label">Our Speciality</span>
+      </motion.div>
+
+      <div className="speciality-strip">
+        {specialities.map((s, i) => (
+          <>
+            <motion.div
+              className="speciality-item"
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -4 }}
+            >
+              <motion.div
+                className="speciality-icon"
+                whileHover={{ rotate: 10, scale: 1.15 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                {s.icon}
+              </motion.div>
               <div className="speciality-text">
                 <div className="speciality-title">{s.title}</div>
                 <div className="speciality-desc">{s.desc}</div>
               </div>
-              {i < specialities.length - 1 && (
-                <div className="speciality-divider" />
-              )}
-            </div>
-          ))}
-        </div>
-      </FadeUp>
+            </motion.div>
+            {i < specialities.length - 1 && (
+              <div className="speciality-divider" key={`div-${i}`} />
+            )}
+          </>
+        ))}
+      </div>
     </section>
   )
 }
