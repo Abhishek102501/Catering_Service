@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate, Link, Outlet, useLocation } from 'react-router-dom'
-import { FaCalendarAlt, FaHeart, FaSignOutAlt, FaTachometerAlt, FaStar } from 'react-icons/fa'
+import { FaCalendarAlt, FaHeart, FaSignOutAlt, FaTachometerAlt, FaStar, FaImages } from 'react-icons/fa'
 
 export default function AdminLayout() {
   const navigate = useNavigate()
@@ -18,12 +18,13 @@ export default function AdminLayout() {
     navigate('/admin/login')
   }
 
-  const links = [
-    { path: '/admin/dashboard', label: 'Dashboard', icon: <FaTachometerAlt /> },
-    { path: '/admin/bookings', label: 'Bookings', icon: <FaCalendarAlt /> },
-    { path: '/admin/charity', label: 'Charity', icon: <FaHeart /> },
-    { path: '/admin/testimonials', label: 'Testimonials', icon: <FaStar /> },
-  ]
+ const links = [
+  { path: '/admin/dashboard', label: 'Dashboard', icon: <FaTachometerAlt /> },
+  { path: '/admin/bookings', label: 'Bookings', icon: <FaCalendarAlt /> },
+  { path: '/admin/charity', label: 'Charity', icon: <FaHeart /> },
+  { path: '/admin/testimonials', label: 'Testimonials', icon: <FaStar /> },
+  { path: '/admin/gallery', label: 'Gallery', icon: <FaImages /> },
+]
 
   return (
     <div className="admin-layout">

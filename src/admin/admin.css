@@ -748,3 +748,127 @@
 @media (max-width: 768px) {
   .admin-testi-grid { grid-template-columns: 1fr; }
 }
+/* ── GALLERY ADMIN ── */
+.admin-upload-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.admin-upload-zone {
+  width: 200px;
+  height: 180px;
+  border: 2px dashed #E0E0D8;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-upload-zone:hover { border-color: #1B7B34; }
+
+.admin-upload-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-upload-placeholder {
+  text-align: center;
+  color: #7A7468;
+  padding: 16px;
+}
+
+.admin-upload-placeholder p {
+  font-size: .85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.admin-upload-placeholder small {
+  font-size: .72rem;
+  color: #AAA;
+}
+
+.admin-upload-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.admin-gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #F5F6FA;
+}
+
+.admin-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s;
+}
+
+.admin-gallery-item:hover img { transform: scale(1.05); }
+
+.admin-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s;
+}
+
+.admin-gallery-item:hover .admin-gallery-overlay {
+  background: rgba(0,0,0,.5);
+}
+
+.admin-gallery-delete {
+  background: #C62828;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .3s;
+  font-size: .9rem;
+}
+
+.admin-gallery-item:hover .admin-gallery-delete { opacity: 1; }
+
+.admin-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  font-size: .72rem;
+  padding: 6px 10px;
+}
+
+@media (max-width: 768px) {
+  .admin-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-upload-grid { grid-template-columns: 1fr; }
+  .admin-upload-zone { width: 100%; }
+}

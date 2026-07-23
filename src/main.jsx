@@ -8,6 +8,7 @@ import Dashboard from './admin/Dashboard.jsx'
 import Bookings from './admin/Bookings.jsx'
 import CharityAdmin from './admin/Charity.jsx'
 import Testimonials from './admin/Testimonials.jsx'
+import GalleryAdmin from './admin/Gallery.jsx'
 import './index.css'
 import './admin/admin.css'
 
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="bookings" element={<Bookings />} />
           <Route path="charity" element={<CharityAdmin />} />
           <Route path="testimonials" element={<Testimonials />} />
+          <Route path="gallery" element={<GalleryAdmin />} />
         </Route>
       </Routes>
     </BrowserRouter>
