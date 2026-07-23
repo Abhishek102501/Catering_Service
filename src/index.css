@@ -1332,3 +1332,93 @@ footer{background:#0F1F13;padding:64px 0 0}
   .cuisine-modal-footer { padding: 16px 20px; }
   .cuisine-modal-title { font-size: 1.4rem; }
 }
+/* ── CHARITY IMAGE ── */
+.charity-img-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.charity-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.02) contrast(1.05);
+}
+/* ── CHARITY SWIPER ── */
+.charity-swiper-wrap {
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+
+.charity-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.charity-slide {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.charity-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
+  transition: transform .5s ease;
+}
+
+.charity-swiper .swiper-slide-active .charity-slide img {
+  transform: scale(1.03);
+}
+
+.charity-swiper .swiper-pagination-bullet {
+  background: var(--yellow) !important;
+}
+
+.charity-swiper .swiper-pagination-bullet-active {
+  background: var(--white) !important;
+}
+/* ── CHARITY SLIDESHOW ── */
+.charity-slideshow {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+
+.charity-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: sevaSlide 12.5s infinite;
+}
+
+.slide-0 { animation-delay: 0s; }
+.slide-1 { animation-delay: 2.5s; }
+.slide-2 { animation-delay: 5s; }
+.slide-3 { animation-delay: 7.5s; }
+.slide-4 { animation-delay: 10s; }
+
+@keyframes sevaSlide {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
+}

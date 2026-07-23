@@ -33,7 +33,6 @@ export default function Footer() {
           <div className="fcol">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#about">Our Story</a></li>
               <li><a href="#menu">Our Menu</a></li>
               <li><a href="#testi">Reviews</a></li>
               <li><a href="#faq">FAQs</a></li>

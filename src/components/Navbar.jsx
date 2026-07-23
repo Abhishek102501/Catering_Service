@@ -33,7 +33,6 @@ export default function Navbar({ onBookNow }) {
   }
 
   const links = [
-    { label: 'Our Story', id: 'about' },
     { label: 'Founder', id: 'founder' },
     { label: 'Services', id: 'services' },
     { label: 'Cuisines', id: 'cuisines' },

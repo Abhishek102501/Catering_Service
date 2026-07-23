@@ -1,12 +1,39 @@
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 import { FaMosque, FaCalendarAlt, FaBoxOpen, FaHandsHelping, FaLeaf, FaWhatsapp, FaHeart } from 'react-icons/fa'
 import { useState } from 'react'
 import { submitCharity } from '../api/api'
 
+const sevaPhotos = [
+  'https://res.cloudinary.com/r9upjg8g/image/upload/v1784820510/WhatsApp_Image_2026-07-23_at_2.12.25_PM_2_fvyvix.jpg',
+  'https://res.cloudinary.com/r9upjg8g/image/upload/v1784820499/WhatsApp_Image_2026-07-23_at_2.12.25_PM_vdxdcj.jpg',
+  'https://res.cloudinary.com/r9upjg8g/image/upload/v1784820496/WhatsApp_Image_2026-07-23_at_2.12.25_PM_1_lgclgi.jpg',
+  'https://res.cloudinary.com/r9upjg8g/image/upload/v1784820341/WhatsApp_Image_2026-07-23_at_2.12.23_PM_kng2iv.jpg',
+  'https://res.cloudinary.com/r9upjg8g/image/upload/v1784820341/WhatsApp_Image_2026-07-23_at_2.12.24_PM_ctph53.jpg',
+]
 const cards = [
-  { icon: <FaMosque />, title: 'Where', desc: 'Outside Shri Annapurna Temple, Kanpur, U.P.' },
-  { icon: <FaCalendarAlt />, title: 'When', desc: 'Every Saturday & Sunday, 12:00 PM – 2:00 PM' },
-  { icon: <FaBoxOpen />, title: 'What We Serve', desc: 'Fresh, hot, pure vegetarian meals prepared with love and hygiene.' },
-  { icon: <FaHandsHelping />, title: 'How to Help', desc: 'Donate meals, volunteer your time, or sponsor a Sunday distribution.' },
+  {
+    icon: <FaMosque />,
+    title: 'Where',
+    desc: 'Hanuman Mandir, Gandhi Gram, Kanpur, U.P.'
+  },
+  {
+    icon: <FaCalendarAlt />,
+    title: 'When',
+    desc: 'Every Tuesday, 5:00 PM – 8:00 PM — Prasad Vitaran'
+  },
+  {
+    icon: <FaBoxOpen />,
+    title: 'What We Serve',
+    desc: 'Fresh, hot, pure vegetarian prasad prepared with love and devotion.'
+  },
+  {
+    icon: <FaHandsHelping />,
+    title: 'How to Help',
+    desc: 'Donate meals, volunteer your time, or sponsor a Tuesday distribution.'
+  },
 ]
 
 export default function Charity() {
@@ -43,10 +70,10 @@ export default function Charity() {
           <div className="charity-header">
             <span className="charity-eyebrow">Seva & Compassion</span>
             <span className="charity-gline"></span>
-            <h2 className="charity-title">Food is Love. Let's Share It.</h2>
+            <h2 className="charity-title">Prasad Vitaran — Seva & Compassion</h2>
             <p className="charity-subtitle">
-              Every Saturday & Sunday, we distribute free meals outside the temple —
-              because no one should sleep hungry. Join us in this sacred mission.
+              Every Tuesday, we distribute prasad outside Hanuman Mandir, Gandhi Gram, Kanpur —
+              because serving food is serving God. Join us in this sacred mission.
             </p>
           </div>
 
@@ -66,30 +93,45 @@ export default function Charity() {
 
             {/* Left — Story */}
             <div className="charity-story">
+
+              {/* Photo */}
+          
+          <div className="charity-slideshow">
+  {sevaPhotos.map((photo, i) => (
+    <img
+      key={i}
+      src={photo}
+      alt={`Seva event ${i + 1}`}
+      className={`charity-slide-img slide-${i}`}
+    />
+  ))}
+</div>
               <span className="ey" style={{ color: 'var(--yellow)' }}>Our Mission</span>
               <h3 className="charity-story-title">
                 Serving the Community<br />
-                <em style={{ color: 'var(--yellow)', fontStyle: 'italic' }}>Every Weekend</em>
+                <em style={{ color: 'var(--yellow)', fontStyle: 'italic' }}>Every Tuesday</em>
               </h3>
+
               <p>
-                At LTCS, we believe food is more than a business — it is a blessing.
-                Inspired by the teachings of <strong>Mata Annapurna</strong>, we have
-                been distributing free meals to the needy every weekend outside the
-                temple premises.
+                At LTCS, we believe food is more than a business — it is a blessing and
+                a form of seva. Every Tuesday evening, we gather at
+                <strong> Hanuman Mandir, Gandhi Gram, Kanpur</strong> to distribute
+                prasad to devotees and those in need.
               </p>
               <p>
-                From underprivileged families to daily wage workers, our volunteers
-                ensure that warm, nutritious, pure vegetarian food reaches those who
-                need it most — with dignity and love.
+                From 5PM to 8PM every Tuesday, our dedicated volunteers ensure that
+                warm, nutritious, pure vegetarian prasad reaches everyone with
+                <strong> devotion, dignity and love</strong>.
               </p>
+
               <div className="charity-highlights">
                 <div className="charity-highlight">
                   <span className="charity-highlight-num">500+</span>
-                  <span className="charity-highlight-lbl">Meals Every Weekend</span>
+                  <span className="charity-highlight-lbl">Prasad Every Tuesday</span>
                 </div>
                 <div className="charity-highlight">
                   <span className="charity-highlight-num">52+</span>
-                  <span className="charity-highlight-lbl">Weeks a Year</span>
+                  <span className="charity-highlight-lbl">Tuesdays a Year</span>
                 </div>
                 <div className="charity-highlight">
                   <span className="charity-highlight-num">∞</span>
@@ -102,7 +144,7 @@ export default function Charity() {
             <div className="charity-form-wrap">
               <div className="charity-form-header">
                 <h3>Be Part of This Mission</h3>
-                <p>Join us as a volunteer or sponsor meals for those in need.</p>
+                <p>Join us as a volunteer or sponsor prasad for those in need.</p>
               </div>
 
               {submitted ? (
@@ -138,9 +180,9 @@ export default function Charity() {
                     <label>I want to</label>
                     <select name="type" value={form.type} onChange={handle}>
                       <option value="">Select your contribution…</option>
-                      <option>Volunteer on weekends</option>
-                      <option>Sponsor meals (one time)</option>
-                      <option>Sponsor meals (monthly)</option>
+                      <option>Volunteer on Tuesdays</option>
+                      <option>Sponsor prasad (one time)</option>
+                      <option>Sponsor prasad (monthly)</option>
                       <option>Donate groceries / supplies</option>
                       <option>Spread awareness</option>
                     </select>
@@ -159,7 +201,7 @@ export default function Charity() {
                     {loading ? 'Submitting...' : 'Join the Mission'}
                   </button>
                   <a
-                    href="https://wa.me/919936485155?text=Hello! I want to volunteer/donate for your food charity."
+                    href="https://wa.me/919936485155?text=Hello! I want to volunteer/donate for your prasad vitaran at Hanuman Mandir."
                     target="_blank"
                     rel="noreferrer"
                     className="charity-wa"
