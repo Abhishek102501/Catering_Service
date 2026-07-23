@@ -13,6 +13,7 @@ import Testimonials from './components/Testimonials'
 import Charity from './components/Charity'
 import Faq from './components/Faq'
 import Gallery from './components/Gallery'
+import VideoGallery from './components/VideoGallery'
 import Cta from './components/Cta'
 import ContactBar from './components/ContactBar'
 import Footer from './components/Footer'
@@ -41,6 +42,7 @@ export default function App() {
       <Testimonials />
       <Charity />
       <Gallery />
+            <VideoGallery />
       <Cta onBookNow={openModal} />
        <Faq onBookNow={openModal} />
       <ContactBar />

@@ -27,7 +27,7 @@ import g16 from '../assets/gallery/g16.jpg'
 import g17 from '../assets/gallery/g17.jpg'
 // import g18 from '../assets/gallery/g18.jpg'
 // import g19 from '../assets/gallery/g19.jpg'
-import gvideo from '../assets/gallery/gvideo.mp4'
+// import gvideo from '../assets/gallery/gvideo.mp4'
 
 const photos = [g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15,g16,g17]
 
@@ -85,7 +85,7 @@ export default function Gallery() {
           </div>
         </FadeUp>
 
-        {/* Featured Video */}
+        {/* Featured Video
         <FadeUp delay={0.2}>
           <div className="gallery-video-wrap">
             <video
@@ -103,7 +103,7 @@ export default function Gallery() {
               </div>
             </div>
           </div>
-        </FadeUp>
+        </FadeUp> */}
 
         {/* Masonry Grid */}
         <FadeUp delay={0.3}>
