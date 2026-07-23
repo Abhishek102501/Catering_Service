@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Founder from './components/Founder'
 import Services from './components/Services'
+import Speciality from './components/Speciality'
 import Stats from './components/Stats'
 import Cuisines from './components/Cuisines'
 import Personalities from './components/Personalities'
@@ -36,7 +37,9 @@ export default function App() {
       <About onBookNow={openModal} />
       <Founder />
       <Services />
+      <Speciality />
       <Stats />
+      
       <Cuisines />
       <Personalities />
       <Testimonials />
